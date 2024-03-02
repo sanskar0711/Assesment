@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resizable Layout with Tailwind CSS</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    body {
+        overflow: auto; /* Make the body scrollable */
+    }
+    .container {
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 1fr 1fr;
+        height: 100vh; /* Full height of the viewport */
+    }
+    .component {
+        border: 1px solid #ccc;
+        overflow: auto;
+        position: relative;
+    }
+    .resize-handle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        cursor: nwse-resize;
+    }
+    .resize-handle-top {
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: ns-resize;
+    }
+    .resize-handle-bottom {
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: ns-resize;
+    }
+    .resize-handle-left {
+        top: 50%;
+        left: -5px;
+        transform: translateY(-50%);
+        cursor: ew-resize;
+    }
+    .resize-handle-right {
+        top: 50%;
+        right: -5px;
+        transform: translateY(-50%);
+        cursor: ew-resize;
+    }
+</style>
+</head>
+<body class="bg-gray-100">
+<div class="container">
+    <div class="component" id="component1">
+        <div class="resize-handle resize-handle-top" data-resize="top"></div>
+        <div class="resize-handle resize-handle-bottom" data-resize="bottom"></div>
+        <div class="resize-handle resize-handle-left" data-resize="left"></div>
+        <div class="resize-handle resize-handle-right" data-resize="right"></div>
+        <h2 class="text-lg font-semibold">V8 Engine</h2>
+        <p>A V8 engine is an eight-cylinder piston engine in which two banks of four cylinders share a common crankshaft and are arranged in a V configuration.[1]
+
+            The first V8 engine was produced by the French Antoinette company in 1904, developed and used in cars and speedboats, but primarily for aircraft.[2] The American 1914–1935 Cadillac L-Head engine is considered the first road-going V8 engine to be mass-produced in significant quantities with 13,000 sold the first year.[3] The popularity of V8 engines in cars was significantly increased following the 1932 introduction of the Ford Flathead V8.[4]
+            
+            In the early 21st century, the use of V8 engines in passenger vehicles declined as automobile manufacturers opted for more fuel efficient, lower capacity engines, or hybrid and electric drivetrains.[5]
+        </p>
+        <h2>Design</h2>
+        <p>Most engines use a V-angle (the angle between the two banks of cylinders) of 90 degrees. This angle results in good engine balance, which results in low vibrations.[6] However, the downside is the greater width of the engine compared to those that use a smaller V-angle.
+
+            V8 engines with a 60-degree V-angle were used in the 1996–1999 Ford Taurus SHO, the 2005–2011 Volvo XC90, and the 2006–2009 Volvo S80. The Ford engine used a 60-degree V-angle because it was based on a V6 engine with a 60-degree V-angle. Both the Ford and Volvo engines were used in transverse engine chassis, which were designed for a front-wheel-drive layout (with an on-demand all-wheel drive system in the case of the Volvos). To reduce the vibrations caused by the unbalanced 60-degree V-angle, the Volvo engines used a balance shaft and offset split crankpins.[7] The Rolls-Royce Meteorite tank engine also used a 60-degree V-angle, since it was derived from the 60 degree V12 Rolls-Royce Meteor which in turn was based on the Rolls-Royce Merlin V12 engine.[8]
+            
+            Other V-angles have been used occasionally. The Lancia Trikappa, Lancia Dilambda, and Lancia Astura, produced 1922–1939, used narrow angle V8 engines (based on the Lancia V4 engine) with V-angles of 14–24 degrees.[9] The 1932 Miller four-wheel drive racing cars used a V8 engine with a V-angle of 45 degrees.[10] The 8-cylinder versions of the 1945 through 1966 EMD 567 diesel locomotive engine also used a V-angle of 45 degrees.
+        </p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </div>
+    <div class="component" id="component2">
+        <div class="resize-handle resize-handle-top" data-resize="top"></div>
+        <div class="resize-handle resize-handle-bottom" data-resize="bottom"></div>
+        <div class="resize-handle resize-handle-left" data-resize="left"></div>
+        <div class="resize-handle resize-handle-right" data-resize="right"></div>
+        <h2 class="text-lg font-semibold">V10 Engine</h2>
+        <p>A V10 engine is a ten-cylinder piston engine where two banks of five cylinders are arranged in a V configuration around a common crankshaft. V10 engines are much less common than V8 and V12 engines. Several V10 diesel engines have been produced since 1965, and V10 petrol engines for road cars were first produced in 1991 with the release of the Dodge Viper.
+        </p>
+        <h2>Design</h2>
+        <p>The V10 configuration does not have perfect engine balance, since an unbalanced rocking couple is caused by each cylinder bank functioning as a straight-five engine. Therefore, balance shafts are sometimes used to reduce the vibrations in a V10 engine.[1]
+        </p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </div>
+    <div class="component" id="component3" style="grid-row: 2; grid-column: 1 / span 2;">
+        <div class="resize-handle resize-handle-top" data-resize="top"></div>
+        <div class="resize-handle resize-handle-bottom" data-resize="bottom"></div>
+        <div class="resize-handle resize-handle-left" data-resize="left"></div>
+        <div class="resize-handle resize-handle-right" data-resize="right"></div>
+        <h2 class="text-lg font-semibold">V12 Engine</h2>
+        <p>A V12 engine is a twelve-cylinder piston engine where two banks of six cylinders are arranged in a V configuration around a common crankshaft. V12 engines are more common than V10 engines. However, they are less common than V8 engines.
+
+            The first V12 engine was built in 1904 for use in racing boats. Due to the balanced nature of the engine and the smooth delivery of power, V12 engines were found in early luxury automobiles, boats, aircraft, and tanks. Aircraft V12 engines reached their apogee during World War II, following which they were mostly replaced by jet engines. In Formula One racing, V12 engines were common during the late 1960s and early 1990s.
+            
+            Applications of V12 engines in the 21st century have been as marine engines, in railway locomotives, as large stationary power as well as in some European sports and luxury cars.
+        </p>
+        <h2>Balance and Smoothness</h2>
+        <p>Each bank of a V12 engine essentially functions as a straight-six engine, which by itself has perfect primary and secondary engine balance. A four-stroke V12 engine has even firing order at V-angles of 60, 120, or 180 degrees[1] Many V12 engines use a V-angle of 60 degrees between the two banks of cylinders.[2] V12 engines with other V-angles have been produced, sometimes using split crankpins to reduce the unbalanced vibrations. The drawbacks of V12 engines include extra cost, complexity, friction losses, and external size and weight, compared with engines containing fewer cylinders.
+
+            At any given time, three of the cylinders in a V12 engine are in their power stroke, which increases the smoothness of the power delivery by eliminating gaps between power pulses.
+            
+            A V12 engine with a 180 degree V-angle is often called a flat-twelve engine. These are also sometimes called 'boxer twelve' engines, however this terminology is incorrect for the majority of 180-degree V12 engines, since they use shared crankpins and are therefore not configured as boxer engines.[3]
+            
+            Theoretically, the rotating parts of a V12 racing engine could be lighter than a crossplane V8 engine of similar displacement due to the V12 engine not requiring counterweights on the crankshaft or as much inertial mass for the flywheel. In addition, the exhaust system of a V12 engine is much simpler than would be required for a crossplane V8 engine to achieve pulsed exhaust gas tuning. However, the use of V12 engines in motor racing is uncommon in the 21st century.
+            
+        </p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.resize-handle').forEach(function(handle) {
+        handle.addEventListener('mousedown', function(e) {
+            const component = handle.parentElement;
+            const resizeDirection = handle.dataset.resize;
+            const startX = e.clientX;
+            const startY = e.clientY;
+            const startWidth = parseInt(document.defaultView.getComputedStyle(component).width);
+            const startHeight = parseInt(document.defaultView.getComputedStyle(component).height);
+
+            function resizeComponent(e) {
+                if (resizeDirection === 'top' || resizeDirection === 'bottom') {
+                    const newHeight = resizeDirection === 'top' ? startHeight + startY - e.clientY : startHeight + e.clientY - startY;
+                    component.style.height = newHeight + 'px';
+                } else if (resizeDirection === 'left' || resizeDirection === 'right') {
+                    const newWidth = resizeDirection === 'left' ? startWidth + startX - e.clientX : startWidth + e.clientX - startX;
+                    component.style.width = newWidth + 'px';
+                }
+            }
+
+            function stopResize() {
+                window.removeEventListener('mousemove', resizeComponent);
+                window.removeEventListener('mouseup', stopResize);
+            }
+
+            window.addEventListener('mousemove', resizeComponent);
+            window.addEventListener('mouseup', stopResize);
+        });
+    });
+</script>
+</body>
+</html>
