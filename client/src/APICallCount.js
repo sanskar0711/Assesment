@@ -15,7 +15,7 @@ export const fetchAPICallCount = async () => {
 
 const APICallCount = () => {
   const [apiCalls, setAPICalls] = useState({});
-  const [, setRefreshKey] = useState(0); // Ignore this line for ESLint
+  //const [, setRefreshKey] = useState(0); // Ignore this line for ESLint
 
   useEffect(() => {
     // Call fetchAPICallCount inside useEffect
