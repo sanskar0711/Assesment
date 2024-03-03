@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css'; // Imported the CSS file 
 
 const AddData = () => {
   const [userData, setUserData] = useState({
@@ -30,8 +31,17 @@ const AddData = () => {
             userAddress: ''
         });
     } catch (error) {
-      console.error('Error adding data:', error);
-      setMessage('An error occurred while adding data. Please try again later.');
+      if (error.response) {
+        // Request made and server responded with an error status code
+        const { data } = error.response;
+        setMessage(data.message);
+      } else if (error.request) {
+        // The request was made but no response was received
+        setMessage('An error occurred while processing the request. Please try again later.');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        setMessage('An unexpected error occurred. Please try again later.');
+      }
     }
   };
   
@@ -39,35 +49,37 @@ const AddData = () => {
   return (
     <div>
       <h2>Add Data</h2>
-      <input
+      <input className="text-field"
         type="text"
         placeholder="Name"
         name="userName"
         value={userData.userName}
         onChange={handleChange}
-      />
-      <input
+      /> <tab></tab>
+      <input className="text-field"
         type="email"
         placeholder="Email"
         name="userEmail"
         value={userData.userEmail}
         onChange={handleChange}
-      />
-      <input
+      /> <tab></tab>
+      <input className="text-field"
         type="text"
         placeholder="Phone"
         name="userPhone"
         value={userData.userPhone}
         onChange={handleChange}
-      />
-      <input
+      /> <tab></tab>
+      <input className="text-field"
         type="text"
         placeholder="Address"
         name="userAddress"
         value={userData.userAddress}
         onChange={handleChange}
       />
-      <button onClick={handleAdd}>Add</button>
+      <br></br>
+      <br></br>
+      <button className="button" onClick={handleAdd}>Add</button>
       <p>{message}</p>
     </div>
   );

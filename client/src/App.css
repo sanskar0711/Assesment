@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #aed4f3;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.heading {
+  font-size: 40px;
+  color: #0880f1;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sub-heading {
+  font-size: 18px;
+  color: #632edc;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  font-size: 16px;
+  color: #8055c2;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-field {
+  margin-bottom: 10px; /* Add margin bottom for space between text fields */
+  font-size: 12px;
+  color: #ba9ee5;
+}
+
+.button {
+  background-color: #87ceeb; /* Sky Blue */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #00bfff; /* Deep Sky Blue */
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.info {
+  color: #333;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 16px;
+  margin-top: 10px;
 }

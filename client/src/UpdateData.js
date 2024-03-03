@@ -29,13 +29,25 @@ const UpdateData = () => {
         userPhone: '',
         userAddress: ''
       });
-    } catch (error) {
-      setMessage('An error occurred while updating data.');
+    }  catch (error) {
+      if (error.response) {
+        // Request made and server responded with an error status code
+        const { data } = error.response;
+        setMessage(data.message);
+      } else if (error.request) {
+        // The request was made but no response was received
+        setMessage('An error occurred while processing the request. Please try again later.');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        setMessage('An unexpected error occurred. Please try again later.');
+      }
     }
   };
 
   return (
     <div>
+      <br></br>
+      <br></br>
       <h2>Update Data</h2>
       <input
         type="email"
@@ -43,29 +55,31 @@ const UpdateData = () => {
         name="userEmail"
         value={userData.userEmail}
         onChange={handleChange}
-      />
+      /> <tab></tab>
       <input
         type="text"
         placeholder="Name"
         name="userName"
         value={userData.userName}
         onChange={handleChange}
-      />
+      /> <tab></tab>
       <input
         type="text"
         placeholder="Phone"
         name="userPhone"
         value={userData.userPhone}
         onChange={handleChange}
-      />
+      /> <tab></tab>
       <input
         type="text"
         placeholder="Address"
         name="userAddress"
         value={userData.userAddress}
         onChange={handleChange}
-      />
-      <button onClick={handleUpdate}>Update</button>
+      /> 
+      <br></br>
+      <br></br>
+      <button className="button" onClick={handleUpdate}>Update</button>
       <p>{message}</p>
     </div>
   );

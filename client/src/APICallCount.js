@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css'; // Imported the CSS file 
 
 // Define fetchAPICallCount outside of the component
 export const fetchAPICallCount = async () => {
@@ -29,9 +30,11 @@ const APICallCount = () => {
   //updating values
   return (
     <div> {/* No need to use refreshKey */}
+      <br></br>
+      <br></br>
       <h2>API Call Count</h2>
-      <p>Add Calls: {apiCalls.addAPICalls}</p>
-      <p>Update Calls: {apiCalls.updateAPICalls}</p>
+      <p className="content">Add Calls: {apiCalls.addAPICalls}</p>
+      <p className="content">Update Calls: {apiCalls.updateAPICalls}</p>
     </div>
   );
 };
